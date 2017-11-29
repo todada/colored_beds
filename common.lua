@@ -58,6 +58,17 @@ colored_beds.hues13 = {
 
 -------------------------------------------------
 --
+--  palette_name
+--
+-- returns name of unifieddyes palette for 'colorfacedir' nodes
+-------------------------------------------------
+colored_beds.palette_name = function(color)
+   return "unifieddyes_palette_"..color.."s.png"
+end
+
+        
+-------------------------------------------------
+--
 --  base_color
 --
 -- returns base color name for 'colorfacedir' nodes

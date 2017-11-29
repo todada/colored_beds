@@ -237,8 +237,7 @@ for _, color in ipairs(colored_beds.hues13) do
       overlay_tiles = def.overlay_tiles.bottom,
       paramtype = "light",
       paramtype2 = "colorfacedir",
-      palette = "unifieddyes_palette_"..color.."s.png",
-      --palette_index = palette_index,
+      palette = colored_beds.palette_name(color),
       is_ground_content = false,
       -- stack_max = 1,  -- not used in item stacks (uses small instead)
       groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 1, ud_param2_colorable = 1, not_in_creative_inventory = 1},
@@ -280,8 +279,7 @@ for _, color in ipairs(colored_beds.hues13) do
       overlay_tiles = def.overlay_tiles.top,
       paramtype = "light",
       paramtype2 = "colorfacedir",
-      palette = "unifieddyes_palette_"..color.."s.png", 
-      --palette_index = palette_index,
+      palette = colored_beds.palette_name(color),
       is_ground_content = false,
       pointable = false,
       groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 2, ud_param2_colorable = 1, not_in_creative_inventory = 1},
@@ -298,9 +296,9 @@ for _, color in ipairs(colored_beds.hues13) do
    -- "small" version used as nice place holder for inventory/drops
    local s_groups
    if color == colored_beds.base_color() then -- show only base color in creative inventory
-      s_groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, ud_param2_colorable = 1}
+      s_groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 3, ud_param2_colorable = 1}
    else
-      s_groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, ud_param2_colorable = 1, not_in_creative_inventory = 1 }
+      s_groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 3, ud_param2_colorable = 1, not_in_creative_inventory = 1 }
    end
    minetest.register_node(name .. "_small_"..color, {
       description = def.description,
@@ -309,8 +307,7 @@ for _, color in ipairs(colored_beds.hues13) do
       overlay_tiles = def.overlay_tiles.small,
       paramtype = "light",
       paramtype2 = "colorfacedir",
-      palette = "unifieddyes_palette_"..color.."s.png", 
-      --palette_index = palette_index,
+      palette = colored_beds.palette_name(color),
       is_ground_content = false,
       -- stack_max = 1,  -- allow stacking 
       groups = s_groups,

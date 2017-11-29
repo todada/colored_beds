@@ -7,7 +7,7 @@
 -- Fancy shaped bed
 
 colored_beds.register_bed("colored_beds:fancy_bed", {
-   description = "Fancy Bed",
+   description = "Colored Fancy Bed",
    tiles = {
       bottom = {
          "wool_white.png^[transformR90",
