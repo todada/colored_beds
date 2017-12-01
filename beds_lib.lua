@@ -188,7 +188,7 @@ colored_beds.on_punch_bottom = function(pos, node, player, pointed_thing)
          unifieddyes.on_use(i, player, pt)    
          
          -- reset meta dye string of top - we use only one dye per bed
-         meta = minetest.get_meta(p)
+         local meta = minetest.get_meta(p)
          meta:set_string("dye",nil)   -- remove dye meta entry for top node
          -- reset meta dye string of bottom - no dye shall be returned on recoloring
          meta = minetest.get_meta(pos)
